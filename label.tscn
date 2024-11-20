@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://n11ujq6ugjfl"]
+
+[node name="Label" type="Label"]
+offset_right = 96.0
+offset_bottom = 23.0
+text = "Hello Godot!"
