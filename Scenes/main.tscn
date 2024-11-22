@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://dap5e8hdda8rr"]
+
+[ext_resource type="PackedScene" uid="uid://dvac60fqrm80r" path="res://Scenes/sprite_2d.tscn" id="1_6lkoi"]
+[ext_resource type="Script" path="res://Sources/button.gd" id="2_g4vly"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Sprite2D" parent="." instance=ExtResource("1_6lkoi")]
+
+[node name="Timer" type="Timer" parent="Sprite2D"]
+autostart = true
+
+[node name="Button" type="Button" parent="."]
+offset_left = 48.0
+offset_top = 29.0
+offset_right = 284.0
+offset_bottom = 146.0
+text = "제어 가능"
+script = ExtResource("2_g4vly")
+
+[connection signal="controllability_updated" from="Sprite2D" to="Button" method="_on_sprite_2d_controllability_updated"]
+[connection signal="pressed" from="Button" to="Sprite2D" method="_on_button_pressed"]
